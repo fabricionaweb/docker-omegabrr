@@ -46,4 +46,4 @@ COPY --from=build-app /build /app
 COPY ./rootfs/. /
 
 # run using s6-overlay
-ENTRYPOINT ["/init"]
+ENTRYPOINT ["/entrypoint.sh"]

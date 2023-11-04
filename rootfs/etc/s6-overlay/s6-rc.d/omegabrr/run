@@ -1,7 +1,4 @@
 #!/usr/bin/with-contenv sh
 
-# change chdir
-cd /config
-
-# run with limited permissions
-exec s6-setuidgid $PUID:$PGID /app/omegabrr run --config=/config/config.yml
+# run run (from /usr/local/bin)
+exec omegabrr run
