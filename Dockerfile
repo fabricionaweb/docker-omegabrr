@@ -29,9 +29,9 @@ ARG VERSION
 ARG COMMIT=$VERSION
 RUN mkdir /build && \
     go build -trimpath -ldflags "-s -w \
-        -X main.version=$VERSION \
-        -X main.commit=$COMMIT \
-        -X main.date=$(date -u '+%Y-%m-%dT%H:%M:%SZ')" \
+        -X buildinfo.Version=$VERSION \
+        -X buildinfo.Commit=$COMMIT \
+        -X buildinfo.Date=$(date -u '+%Y-%m-%dT%H:%M:%SZ')" \
         -o /build/ ./cmd/...
 
 # runtime stage ================================================================
