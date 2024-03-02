@@ -29,9 +29,9 @@ ARG VERSION
 ARG COMMIT=$VERSION
 RUN mkdir /build && \
     go build -trimpath -ldflags "-s -w \
-        -X buildinfo.Version=$VERSION \
-        -X buildinfo.Commit=$COMMIT \
-        -X buildinfo.Date=$(date -u '+%Y-%m-%dT%H:%M:%SZ')" \
+        -X github.com/autobrr/omegabrr/internal/buildinfo.Version=$VERSION \
+        -X github.com/autobrr/omegabrr/internal/buildinfo.Commit=$COMMIT \
+        -X github.com/autobrr/omegabrr/internal/buildinfo.Date=$(date -u '+%Y-%m-%dT%H:%M:%SZ')" \
         -o /build/ ./cmd/...
 
 # runtime stage ================================================================
