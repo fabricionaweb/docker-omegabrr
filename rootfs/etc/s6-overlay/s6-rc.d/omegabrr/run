@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv sh
 
-# run run (from /usr/local/bin)
+# run (from /usr/local/bin)
 exec omegabrr run
